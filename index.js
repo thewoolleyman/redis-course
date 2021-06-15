@@ -1,8 +1,8 @@
 import Redis from 'ioredis'
+import Strings from './strings'
+import Hashes from './hashes'
 
 const redis = new Redis({ password: 'password' });
 
-redis.set('name', 'Woolley')
-redis.get('name', (err, result) => {
-  console.log(result);
-})
+Strings(redis);
+Hashes(redis);
